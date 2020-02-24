@@ -4,7 +4,6 @@
         <el-menu
                 default-active="/home"
                 class="el-menu-vertical-demo"
-                background-color="#fff"
                 text-color="black"
                 :collapse="isCollapsed"
                 active-text-color="#3788ee"
@@ -80,6 +79,12 @@
                         icon: 'setting'
                     },
                     {
+                        path: '/editor',
+                        name: 'editor',
+                        label: 'MarkDown',
+                        icon: 'edit-outline'
+                    },
+                    {
                         path: '/blog',
                         name: 'blog',
                         label: '博客管理',
@@ -139,5 +144,16 @@
     .el-menu-vertical-demo:not(.el-menu--collapse) {
         width: 240px;
         min-height: 400px;
+    }
+
+    .el-menu-item:hover {
+        outline: 0 !important;
+        background-color: #f0f6ff !important;
+        border-right: 4px solid #3788ee;
+    }
+
+    .el-submenu:hover {
+        outline: 0 !important;
+        background-color: #f0f6ff !important;
     }
 </style>

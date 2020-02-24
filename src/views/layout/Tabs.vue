@@ -1,7 +1,7 @@
 <template>
     <div class="tabs">
         <el-tag :key="x.name" v-for="(x,y) in tags" :closable="x.name!=='home'" :disable-transitions="false"
-                @close="handleClose(x)" effect="plain" type="info" @click="handleClick(x)">
+                @close="handleClose(x)" effect="plain" type="info" @click="handleClick(x)" :id="x.name">
             <i :class="'el-icon-'+x.icon"></i>&nbsp;&nbsp;{{x.label}}
         </el-tag>
         <!--        <el-tabs type="card" @tab-remove="handleClose">-->
@@ -19,6 +19,7 @@
     import {mapState, mapMutations} from 'vuex'
     import NProgress from 'nprogress'
     import 'nprogress/nprogress.css'
+
     export default {
         name: "Tabs",
         data() {
@@ -46,7 +47,8 @@
                 NProgress.done()
             },
             handleClick(val) {
-                NProgress.start()
+                NProgress.start();
+                // document.getElementById(val.name).style.background = 'white'
                 this.$router.push({path: val.path})
                 this.$store.commit('choose', val)
                 NProgress.done()
@@ -67,10 +69,21 @@
             font-size: 14px;
             justify-content: center;
             color: #2F2F2F;
-            background: white;
+            background: #f3f6f8;
+            border: none;
             border-radius: 8px 8px 0 0;
             padding: 2px;
         }
+    }
+
+    .el-tag:hover {
+        outline: 0 !important;
+        background-color: white !important;
+    }
+
+    .el-tag:visited {
+        outline: 0 !important;
+        background-color: white !important;
     }
 
     .el-tabs {

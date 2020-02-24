@@ -27,6 +27,11 @@ export default new Router({
                     name: 'setting',
                     component: () => import('./views/Setting.vue')
                 },
+                {
+                    path: '/editor',
+                    name: 'editor',
+                    component: () => import('./views/Editor.vue')
+                },
             ]
         }
     ]
