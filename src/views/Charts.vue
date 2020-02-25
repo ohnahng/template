@@ -2,7 +2,7 @@
     <div class="echarts">
         <el-row :gutter="20">
             <el-col :span="16">
-                <el-card>
+                <el-card shadow="never">
                     <div slot="header">
                         <span>数据走势</span>
                         <el-button style="float: right; padding: 3px 0" type="text">查看更多</el-button>
@@ -13,7 +13,7 @@
                 </el-card>
             </el-col>
             <el-col :span="8">
-                <el-card>
+                <el-card shadow="never">
                     <div slot="header">
                         <span>订单统计</span>
                         <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
@@ -39,7 +39,7 @@
         </el-row>
         <el-row :gutter="20" style="margin-top: 20px">
             <el-col :span="16">
-                <el-card>
+                <el-card shadow="never">
                     <div slot="header">
                         <span>数据分布三</span>
                         <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
@@ -48,7 +48,7 @@
                 </el-card>
             </el-col>
             <el-col :span="8">
-                <el-card>
+                <el-card shadow="never">
                     <div slot="header">
                         <span>数据分布四</span>
                         <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
@@ -90,7 +90,7 @@
                     },
                     {
                         title: '订单状态',
-                        count: 156,
+                        count: 56,
                         color: 'green'
                     }
                 ]

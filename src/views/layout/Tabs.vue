@@ -1,17 +1,9 @@
 <template>
     <div class="tabs">
         <el-tag :key="x.name" v-for="(x,y) in tags" :closable="x.name!=='home'" :disable-transitions="false"
-                @close="handleClose(x)" effect="plain" type="info" @click="handleClick(x)" :id="x.name">
+                @close="handleClose(x)" effect="plain" type="info" @click="handleClick(x)" :color="color" :id="x.name">
             <i :class="'el-icon-'+x.icon"></i>&nbsp;&nbsp;{{x.label}}
         </el-tag>
-        <!--        <el-tabs type="card" @tab-remove="handleClose">-->
-        <!--            <el-tab-pane v-for="(item, index) in tags"-->
-        <!--                         :key="item.name" :closable="item.name !== 'home'"-->
-        <!--                         :label="item.label"-->
-        <!--                         :name="item.name">-->
-        <!--                <router-view></router-view>-->
-        <!--            </el-tab-pane>-->
-        <!--        </el-tabs>-->
     </div>
 </template>
 
@@ -23,12 +15,15 @@
     export default {
         name: "Tabs",
         data() {
-            return {};
+            return {
+                color: '#f3f6f8',
+                value: ''
+            };
         },
         computed: {
             ...mapState({
                 tags: state => state.tabs.tags
-            })
+            }),
         },
         methods: {
             ...mapMutations({
@@ -48,10 +43,31 @@
             },
             handleClick(val) {
                 NProgress.start();
-                // document.getElementById(val.name).style.background = 'white'
-                this.$router.push({path: val.path})
+                this.value = val.name;
+                if (this.$router.currentRoute.name != val.name) {
+                    this.$router.push({path: val.path})
+                }
                 this.$store.commit('choose', val)
                 NProgress.done()
+            }
+        },
+        watch: {
+            value($1, $2) {
+                document.getElementById($1).style.background = 'white'
+                if ($2) {
+                    document.getElementById($2).style.background = '#f3f6f8'
+                }
+            },
+            $route: {
+                handler: function ($1, $2) {
+                    if ($1.name) {
+                        document.getElementById($1.name).style.background = 'white'
+                    }
+                    if ($2.name) {
+                        document.getElementById($2.name).style.background = '#f3f6f8'
+                    }
+                },
+                deep: true
             }
         }
     }

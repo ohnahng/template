@@ -14,7 +14,8 @@ export default {
                 label: '系统首页',
                 icon: 's-home'
             },
-        ]
+        ],
+        color: {}
     },
     mutations: {
         choose(state, value) {
@@ -32,6 +33,15 @@ export default {
         },
         collapse(state) {
             state.collapse = !state.collapse;
+        },
+        click(state, value) {
+            let index = state.tags.findIndex(x => x.name === value.name)
+            state.tags[index].color = 'white'
+            state.tags.forEach(x => {
+                if (x.name !== value.name) {
+                    x.color = '#f3f6f8'
+                }
+            })
         }
     },
     actions: {}

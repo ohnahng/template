@@ -149,7 +149,7 @@
     .el-menu-item:hover {
         outline: 0 !important;
         background-color: #f0f6ff !important;
-        border-right: 4px solid #3788ee;
+        border-right: 3px solid #3788ee;
     }
 
     .el-submenu:hover {

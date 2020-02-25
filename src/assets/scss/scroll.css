@@ -12,6 +12,7 @@
 }
 ::-webkit-scrollbar-thumb:active {
     background: #747474;
+    opacity: 50%;
     -webkit-border-radius: 6px;
 }
 ::-webkit-scrollbar {

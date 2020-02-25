@@ -12,21 +12,34 @@
             </el-breadcrumb>
         </div>
         <div class="right">
-            <el-tooltip effect="light" placement="bottom" content="布局">
-                <el-button type="text">
-                    <Opts></Opts>
-                </el-button>
-            </el-tooltip>
-            <el-tooltip effect="light" placement="bottom" content="通知">
-                <el-button type="text" icon="el-icon-bell"></el-button>
-            </el-tooltip>
-            <el-tooltip effect="light" placement="bottom" content="文档">
-                <el-button type="text" icon="el-icon-reading"></el-button>
-            </el-tooltip>
-            <el-tooltip effect="light" placement="bottom" content="帮助">
-                <el-button type="text" icon="el-icon-help"></el-button>
-            </el-tooltip>
-            <el-dropdown trigger="click">
+            <el-menu class="el-menu-demo"
+                     mode="horizontal"
+                     text-color="black"
+                     active-text-color="#3788ee">
+                <el-menu-item>
+                    <el-tooltip effect="light" placement="bottom" content="布局">
+                        <el-button type="text">
+                            <Opts></Opts>
+                        </el-button>
+                    </el-tooltip>
+                </el-menu-item>
+                <el-menu-item>
+                    <el-tooltip effect="light" placement="bottom" content="通知">
+                        <el-button type="text" icon="el-icon-bell"></el-button>
+                    </el-tooltip>
+                </el-menu-item>
+                <el-menu-item>
+                    <el-tooltip effect="light" placement="bottom" content="文档">
+                        <el-button type="text" icon="el-icon-reading"></el-button>
+                    </el-tooltip>
+                </el-menu-item>
+                <el-menu-item>
+                    <el-tooltip effect="light" placement="bottom" content="帮助">
+                        <el-button type="text" icon="el-icon-help"></el-button>
+                    </el-tooltip>
+                </el-menu-item>
+                <el-menu-item>
+                    <el-dropdown trigger="click">
                 <span class="el-dropdown-link">
                     <div>
                         <el-avatar :src="profile" :size="30"></el-avatar>
@@ -35,11 +48,13 @@
                          clementine<i class="el-icon-arrow-down el-icon--right"></i>
                     </div>
                     </span>
-                <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item icon="el-icon-user">个人信息</el-dropdown-item>
-                    <el-dropdown-item icon="el-icon-upload2">退出登陆</el-dropdown-item>
-                </el-dropdown-menu>
-            </el-dropdown>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item icon="el-icon-user">个人信息</el-dropdown-item>
+                            <el-dropdown-item icon="el-icon-upload2">退出登陆</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                </el-menu-item>
+            </el-menu>
         </div>
     </header>
 </template>
@@ -98,10 +113,14 @@
 
     .right {
         display: flex;
+        float: right;
+        position: absolute;
+        top: 0;
+        right: 0;
 
         .el-button {
             font-size: 20px;
-            margin-right: 20px;
+            /*margin-right: 20px;*/
         }
 
         .el-dropdown {
