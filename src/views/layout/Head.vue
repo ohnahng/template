@@ -45,7 +45,7 @@
                         <el-avatar :src="profile" :size="30"></el-avatar>
                     </div>
                     <div class="dropdown-title">
-                         clementine<i class="el-icon-arrow-down el-icon--right"></i>
+                         Chris<i class="el-icon-arrow-down el-icon--right"></i>
                     </div>
                     </span>
                         <el-dropdown-menu slot="dropdown">

@@ -1,7 +1,8 @@
 <template>
     <div class="tabs">
         <el-tag :key="x.name" v-for="(x,y) in tags" :closable="x.name!=='home'" :disable-transitions="false"
-                @close="handleClose(x)" effect="plain" type="info" @click="handleClick(x)" :color="color" :id="x.name">
+                @close="handleClose(x)" effect="plain" type="info" @click="handleClick(x)"
+                :color="$route.name === x.name ? 'white':'#f3f6f8'">
             <i :class="'el-icon-'+x.icon"></i>&nbsp;&nbsp;{{x.label}}
         </el-tag>
     </div>
@@ -14,12 +15,6 @@
 
     export default {
         name: "Tabs",
-        data() {
-            return {
-                color: '#f3f6f8',
-                value: ''
-            };
-        },
         computed: {
             ...mapState({
                 tags: state => state.tabs.tags
@@ -43,7 +38,6 @@
             },
             handleClick(val) {
                 NProgress.start();
-                this.value = val.name;
                 if (this.$router.currentRoute.name != val.name) {
                     this.$router.push({path: val.path})
                 }
@@ -51,32 +45,13 @@
                 NProgress.done()
             }
         },
-        watch: {
-            value($1, $2) {
-                document.getElementById($1).style.background = 'white'
-                if ($2) {
-                    document.getElementById($2).style.background = '#f3f6f8'
-                }
-            },
-            $route: {
-                handler: function ($1, $2) {
-                    if ($1.name) {
-                        document.getElementById($1.name).style.background = 'white'
-                    }
-                    if ($2.name) {
-                        document.getElementById($2.name).style.background = '#f3f6f8'
-                    }
-                },
-                deep: true
-            }
-        }
     }
 </script>
 
 <style scoped lang="scss">
     .tabs {
-        /*width: 100%;*/
-        /*height: 100%;*/
+        cursor: pointer;
+
         .el-tag {
             margin-top: 13px;
             z-index: 2;
