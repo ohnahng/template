@@ -8,10 +8,11 @@
                 <Head></Head>
             </el-header>
             <el-header class="tabs">
-                <Tabs></Tabs>
+                <div class="tabs-nav">
+                    <Tabs></Tabs>
+                </div>
             </el-header>
             <el-main>
-                <!--<Main></Main>-->
                 <router-view/>
             </el-main>
         </el-container>
@@ -22,11 +23,10 @@
     import Aside from "@/views/layout/Aside";
     import Head from "@/views/layout/Head";
     import Tabs from "@/views/layout/Tabs";
-    import Main from "@/views/layout/Main";
 
     export default {
         name: "Layout",
-        components: {Head, Aside, Tabs, Main},
+        components: {Head, Aside, Tabs},
         computed: {
             isCollapsed() {
                 return this.$store.state.tabs.collapse
@@ -48,7 +48,7 @@
 
     .el-header {
         background: #fff;
-        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1)
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1)
     }
 
     .el-aside {
@@ -57,12 +57,15 @@
     }
 
     .el-main {
-        /*background: #f3f6f8;*/
+        background: #f3f6f8;
     }
 
     .tabs {
-        height: 45px !important;
-        border: none !important;
+        border-radius: 0px;
+        padding: 0px !important;
         background: #f3f6f8;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+        margin-bottom: -10px;
     }
+
 </style>

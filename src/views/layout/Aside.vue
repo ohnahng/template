@@ -47,8 +47,6 @@
                         icon: 'pie-chart'
                     },
                     {
-                        // path: '/authority',
-                        // name: 'authority',
                         label: '权限管理',
                         icon: 's-platform',
                         children: [
@@ -67,10 +65,16 @@
                             {
                                 path: '/aces',
                                 name: 'aces',
-                                label: '访问管理',
+                                label: '资源管理',
                                 icon: ''
                             },
                         ]
+                    },
+                    {
+                        path: '/search',
+                        name: 'search',
+                        label: '搜索列表',
+                        icon: 'search'
                     },
                     {
                         path: '/setting',
@@ -79,10 +83,16 @@
                         icon: 'setting'
                     },
                     {
-                        path: '/editor',
-                        name: 'editor',
-                        label: 'MarkDown',
-                        icon: 'edit-outline'
+                        name: 'extend',
+                        label: '扩展组件',
+                        icon: 'edit-outline',
+                        children: [
+                            {
+                                path: '/editor',
+                                name: 'editor',
+                                label: 'MarkDown',
+                            }
+                        ]
                     },
                     {
                         path: '/blog',

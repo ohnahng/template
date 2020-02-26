@@ -52,6 +52,7 @@
     .tabs {
         cursor: pointer;
 
+
         .el-tag {
             margin-top: 13px;
             z-index: 2;

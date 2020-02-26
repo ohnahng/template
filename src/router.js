@@ -15,22 +15,27 @@ export default new Router({
                 {
                     path: '/home',
                     name: 'home',
-                    component: () => import('./views/Home.vue')
+                    component: () => import('./views/other/Home.vue')
                 },
                 {
                     path: '/charts',
                     name: 'charts',
-                    component: () => import('./views/Charts.vue')
+                    component: () => import('./views/other/Charts.vue')
                 },
                 {
                     path: '/setting',
                     name: 'setting',
-                    component: () => import('./views/Setting.vue')
+                    component: () => import('./views/other/Setting.vue')
                 },
                 {
                     path: '/editor',
                     name: 'editor',
-                    component: () => import('./views/Editor.vue')
+                    component: () => import('./views/extent/Editor.vue')
+                },
+                {
+                    path: '/search',
+                    name: 'search',
+                    component: () => import('./views/other/Search.vue')
                 },
             ]
         }

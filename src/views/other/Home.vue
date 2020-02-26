@@ -1,5 +1,7 @@
 <template>
-    <div>Hello World</div>
+    <el-card shadow="never">
+        Home Page
+    </el-card>
 </template>
 
 <script>

@@ -2,7 +2,7 @@
     <header>
         <div class="left">
             <el-button type="text" @click="collapse">
-                <i :class="{'el-icon-s-unfold':!isCollapsed,'el-icon-s-fold':isCollapsed}" style="font-size: 21px"></i>
+                <i :class="{'el-icon-s-unfold':!isCollapsed,'el-icon-s-fold':isCollapsed}" style="font-size: 21px;"></i>
             </el-button>
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item :to="{ path: '/home' }">Home</el-breadcrumb-item>

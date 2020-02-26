@@ -1,10 +1,12 @@
 <template>
-    <div>Setting</div>
+    <el-card shadow="never">
+        Setting Page
+    </el-card>
 </template>
 
 <script>
     export default {
-        name: "Sets"
+        name: "Setting"
     }
 </script>
 

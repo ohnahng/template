@@ -2,8 +2,8 @@ export default {
     state: {
         collapse: false,
         title: {
-            shrink: 'ET',
-            expand: "Example Template"
+            shrink: 'AT',
+            expand: "Admin Template"
         },
         menu: [],
         current: null,
