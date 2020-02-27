@@ -9,16 +9,16 @@
                 active-text-color="#3788ee"
                 unique-opened>
             <el-menu-item :index="x.path" v-for="(x,y) in notChildren" :key="x.path" @click="clickMenu(x)">
-                <i :class="'el-icon-'+x.icon"></i>
+                <i :class="'el-icon-'+x.icon"></i>&nbsp;
                 <span slot="title">{{x.label}}</span>
             </el-menu-item>
             <el-submenu :index="y+''" v-for="(x,y) in hasChildren" :key="y">
                 <template slot="title">
-                    <i :class="'el-icon-'+x.icon"></i>
+                    <i :class="'el-icon-'+x.icon"></i>&nbsp;
                     <span>{{x.label}}</span>
                 </template>
                 <el-menu-item :index="z.path" v-for="z in x.children" :key="z.path" @click="clickMenu(z)">
-                    &nbsp;&nbsp;{{z.label}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{z.label}}
                 </el-menu-item>
             </el-submenu>
         </el-menu>
@@ -95,12 +95,6 @@
                         ]
                     },
                     {
-                        path: '/blog',
-                        name: 'blog',
-                        label: '博客管理',
-                        icon: 'document'
-                    },
-                    {
                         label: '其他管理',
                         icon: 'share',
                         children: [
@@ -159,7 +153,7 @@
     .el-menu-item:hover {
         outline: 0 !important;
         background-color: #f0f6ff !important;
-        border-right: 3px solid #3788ee;
+        border-right: 4px solid #3788ee;
     }
 
     .el-submenu:hover {

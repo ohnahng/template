@@ -15,16 +15,25 @@ export default new Router({
                 {
                     path: '/home',
                     name: 'home',
+                    meta: {
+                        auth: false
+                    },
                     component: () => import('./views/other/Home.vue')
                 },
                 {
                     path: '/charts',
                     name: 'charts',
+                    meta: {
+                        auth: true
+                    },
                     component: () => import('./views/other/Charts.vue')
                 },
                 {
                     path: '/setting',
                     name: 'setting',
+                    meta: {
+                        auth: true
+                    },
                     component: () => import('./views/other/Setting.vue')
                 },
                 {
